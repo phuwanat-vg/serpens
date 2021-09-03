@@ -1,0 +1,663 @@
+<?xml version="1.0" ?>
+<robot name="serpens_urdf" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find serpens_urdf_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find serpens_urdf_description)/urdf/serpens_urdf.trans" />
+<xacro:include filename="$(find serpens_urdf_description)/urdf/serpens_urdf.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00027997054451526365 -0.00019064006265276712 0.01910383815728144"/>
+    <mass value="0.20475393508704573"/>
+    <inertia ixx="0.000171" ixy="-0.0" ixz="1e-06" iyy="0.000189" iyz="-0.0" izz="0.000318"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="servo0_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.023817699282545974 0.005749900442354143 -0.007871453326593378"/>
+    <mass value="0.2555130258740541"/>
+    <inertia ixx="3.9e-05" ixy="0.0" ixz="1e-06" iyy="6.8e-05" iyz="-0.0" izz="4.6e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.024173 0.005926 -0.0325"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo0_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.024173 0.005926 -0.0325"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo0_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_servo0_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.645961693498178e-07 -9.955764881182556e-08 0.0008643613928907903"/>
+    <mass value="0.00700497380911204"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.010373 0.000176 -0.0482"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo0_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.010373 0.000176 -0.0482"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo0_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.790643557111567e-05 0.016623975091317883 0.01144673390169567"/>
+    <mass value="0.052371181806792864"/>
+    <inertia ixx="9e-06" ixy="0.0" ixz="0.0" iyy="1e-05" iyz="-1e-06" izz="1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.010373 0.013276 -0.0505"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.010373 0.013276 -0.0505"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="servo1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.01924973540421095 -0.009270639450617364 2.0469669471945284e-07"/>
+    <mass value="0.00045126850039796834"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.003527 0.000676 -0.0739"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.003527 0.000676 -0.0739"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_servo1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0039290744024541024 -0.0006862988025785107 -7.223509433662567e-07"/>
+    <mass value="0.0016195799801192233"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.015723 0.011676 -0.0739"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.015723 0.011676 -0.0739"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="servo2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.645957888972039e-07 0.0017293602141066084 2.0469669428924142e-07"/>
+    <mass value="0.00045126850039796834"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.048223 0.011676 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.048223 0.011676 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.06536869760284404 -0.07603706493312537 -0.000654465729437087"/>
+    <mass value="0.052330263297845014"/>
+    <inertia ixx="9e-06" ixy="-8e-06" ixz="-0.0" iyy="4.4e-05" iyz="-0.0" izz="4.7e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.07282 -0.077879 -0.094576"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.07282 -0.077879 -0.094576"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="servo3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00927080416384779 0.008499899885857554 2.050532693920193e-07"/>
+    <mass value="0.00045126850039796834"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.020777 -0.002824 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.020777 -0.002824 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_servo3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0006864635158244023 -0.0039294391123699856 -7.220197437290965e-07"/>
+    <mass value="0.0016195799801192233"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.031777 -0.011324 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.031777 -0.011324 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0056804347817446185 -7.934130093111003e-06 1.54334066774231e-05"/>
+    <mass value="0.05614897602426228"/>
+    <inertia ixx="1e-05" ixy="0.0" ixz="-0.0" iyy="1.2e-05" iyz="0.0" izz="7e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.031777 -0.011324 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.031777 -0.011324 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="servo4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.6339035470029915e-07 -0.009270492412655196 0.019250114442996666"/>
+    <mass value="0.00045126850039796834"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.053677 -0.010835 -0.080045"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.053677 -0.010835 -0.080045"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_servo4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00392960234841027 -0.000686151830518091 1.041409335461596e-06"/>
+    <mass value="0.0016195799801192233"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.053677 0.000165 -0.099295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.053677 0.000165 -0.099295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.020481687369747995 0.011884026774419732 0.002024324960307536"/>
+    <mass value="0.020068502995894605"/>
+    <inertia ixx="4e-06" ixy="-1e-06" ixz="-0.0" iyy="3e-06" iyz="-0.0" izz="6e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.053677 0.000165 -0.099295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.053677 0.000165 -0.099295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="servo5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="2.635709100834438e-07 0.008500047815705996 -0.009270424944507055"/>
+    <mass value="0.00045126850039796834"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.081177 -0.003835 -0.104295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.081177 -0.003835 -0.104295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_servo_5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.003929602569445717 -8.792165034684357e-07 -0.0006860842964992453"/>
+    <mass value="0.0016195799801192233"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.081177 -0.012335 -0.093295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.081177 -0.012335 -0.093295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="tool_link_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.01780176309287465 6.511303609289115e-05 -0.00020166685008318752"/>
+    <mass value="0.029560890763662143"/>
+    <inertia ixx="3e-06" ixy="0.0" ixz="0.0" iyy="6e-06" iyz="0.0" izz="8e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.081177 -0.012335 -0.093295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/tool_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.081177 -0.012335 -0.093295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/tool_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="servo_tool_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-9.256212421537846e-09 0.019250047468511194 -0.009270423806164524"/>
+    <mass value="0.00045126850039796834"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.110925 0.001665 -0.095295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo_tool_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.110925 0.001665 -0.095295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/servo_tool_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_servo_tool_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.003929329742322976 -8.795643143579002e-07 -0.0006860831581567695"/>
+    <mass value="0.0016195799801192233"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.110925 -0.017585 -0.084295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo_tool_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.110925 -0.017585 -0.084295"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo_tool_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="eef_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.008030113259992464 0.00017606001763305432 -0.005190207434945443"/>
+    <mass value="0.0042424747703085006"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.100925 -0.006335 -0.090795"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/eef_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.100925 -0.006335 -0.090795"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/eef_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.023625589654931854 -0.00015143117739204424 0.011801987665074148"/>
+    <mass value="0.03060812881042512"/>
+    <inertia ixx="3e-06" ixy="0.0" ixz="3e-06" iyy="1e-05" iyz="0.0" izz="7e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.015723 0.011676 -0.0739"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.015723 0.011676 -0.0739"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_servo2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.00392907440245404 -0.0006862991378545642 -7.223509438936127e-07"/>
+    <mass value="0.0016195799801192233"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.048223 0.011676 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.048223 0.011676 -0.0939"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/arm_servo2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link3.2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.4333935584587287e-06 0.016499900772567994 -0.00644320390643148"/>
+    <mass value="0.007090930359163667"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.068223 0.009676 -0.1039"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link3.2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.068223 0.009676 -0.1039"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link3.2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link2_pair_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.028812952511745295 0.002249900962215688 -0.017756131216635412"/>
+    <mass value="0.03005223787841536"/>
+    <inertia ixx="3e-06" ixy="-0.0" ixz="3e-06" iyy="1e-05" iyz="0.0" izz="7e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.068223 -0.023324 -0.1039"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link2_pair_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.068223 -0.023324 -0.1039"/>
+    <geometry>
+      <mesh filename="package://serpens_urdf_description/meshes/link2_pair_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="f1" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.024173 -0.005926 0.0325"/>
+  <parent link="base_link"/>
+  <child link="servo0_1"/>
+</joint>
+
+<joint name="joint0" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0138 0.00575 0.0157"/>
+  <parent link="servo0_1"/>
+  <child link="arm_servo0_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+</joint>
+
+<joint name="f2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 -0.0131 0.0023"/>
+  <parent link="arm_servo0_1"/>
+  <child link="link1_1"/>
+</joint>
+
+<joint name="f3" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0139 0.0126 0.0234"/>
+  <parent link="link1_1"/>
+  <child link="servo1_1"/>
+</joint>
+
+<joint name="joint1" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.01925 -0.011 0.0"/>
+  <parent link="servo1_1"/>
+  <child link="arm_servo1_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+</joint>
+
+<joint name="joint2" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="arm_servo2_1"/>
+  <child link="servo2_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+  <limit effort="100" lower="0.0" upper="3.141593" velocity="100"/>
+</joint>
+
+<joint name="f7" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.024597 0.089555 0.000676"/>
+  <parent link="servo2_1"/>
+  <child link="link3_1"/>
+</joint>
+
+<joint name="f8" type="fixed">
+  <origin rpy="0 0 0" xyz="0.093597 -0.075055 -0.000676"/>
+  <parent link="link3_1"/>
+  <child link="servo3_1"/>
+</joint>
+
+<joint name="joint3" type="revolute">
+  <origin rpy="0 0 0" xyz="0.011 0.0085 0.0"/>
+  <parent link="servo3_1"/>
+  <child link="arm_servo3_1"/>
+  <axis xyz="1.0 0.0 -0.0"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+</joint>
+
+<joint name="f9" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="arm_servo3_1"/>
+  <child link="link4_1"/>
+</joint>
+
+<joint name="f10" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0219 -0.000489 -0.013855"/>
+  <parent link="link4_1"/>
+  <child link="servo4_1"/>
+</joint>
+
+<joint name="joint4" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 -0.011 0.01925"/>
+  <parent link="servo4_1"/>
+  <child link="arm_servo4_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+</joint>
+
+<joint name="f11" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="arm_servo4_1"/>
+  <child link="link5_1"/>
+</joint>
+
+<joint name="f12" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0275 0.004 0.005"/>
+  <parent link="link5_1"/>
+  <child link="servo5_1"/>
+</joint>
+
+<joint name="joint5" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 0.0085 -0.011"/>
+  <parent link="servo5_1"/>
+  <child link="arm_servo_5_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+</joint>
+
+<joint name="f13" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="arm_servo_5_1"/>
+  <child link="tool_link_1"/>
+</joint>
+
+<joint name="f14" type="fixed">
+  <origin rpy="0 0 0" xyz="0.029748 -0.014 0.002"/>
+  <parent link="tool_link_1"/>
+  <child link="servo_tool_1"/>
+</joint>
+
+<joint name="joint6" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 0.01925 -0.011"/>
+  <parent link="servo_tool_1"/>
+  <child link="arm_servo_tool_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+  <limit effort="100" lower="1.570796" upper="4.712389" velocity="100"/>
+</joint>
+
+<joint name="f15" type="fixed">
+  <origin rpy="0 0 0" xyz="0.019748 -0.006 -0.0025"/>
+  <parent link="tool_link_1"/>
+  <child link="eef_1"/>
+</joint>
+
+<joint name="f16" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  <parent link="arm_servo1_1"/>
+  <child link="link2_1"/>
+</joint>
+
+<joint name="f17" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.0325 0.0 0.02"/>
+  <parent link="link2_1"/>
+  <child link="arm_servo2_1"/>
+</joint>
+
+<joint name="f18" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.0525 0.002 0.03"/>
+  <parent link="link2_1"/>
+  <child link="link3.2_1"/>
+</joint>
+
+<joint name="f19" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.033 0.0"/>
+  <parent link="link3.2_1"/>
+  <child link="link2_pair_1"/>
+</joint>
+
+</robot>
