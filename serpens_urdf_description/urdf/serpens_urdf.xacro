@@ -5,11 +5,7 @@
 <xacro:include filename="$(find serpens_urdf_description)/urdf/serpens_urdf.trans" />
 <xacro:include filename="$(find serpens_urdf_description)/urdf/serpens_urdf.gazebo" />
 <link name="base_link">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.00027997054451526365 -0.00019064006265276712 0.01910383815728144"/>
-    <mass value="0.20475393508704573"/>
-    <inertia ixx="0.000171" ixy="-0.0" ixz="1e-06" iyy="0.000189" iyz="-0.0" izz="0.000318"/>
-  </inertial>
+  
   <visual>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <geometry>
@@ -487,27 +483,6 @@
   </collision>
 </link>
 
-<link name="link2_pair_1">
-  <inertial>
-    <origin rpy="0 0 0" xyz="0.028812952511745295 0.002249900962215688 -0.017756131216635412"/>
-    <mass value="0.03005223787841536"/>
-    <inertia ixx="3e-06" ixy="-0.0" ixz="3e-06" iyy="1e-05" iyz="0.0" izz="7e-06"/>
-  </inertial>
-  <visual>
-    <origin rpy="0 0 0" xyz="0.068223 -0.023324 -0.1039"/>
-    <geometry>
-      <mesh filename="package://serpens_urdf_description/meshes/link2_pair_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-    <material name="silver"/>
-  </visual>
-  <collision>
-    <origin rpy="0 0 0" xyz="0.068223 -0.023324 -0.1039"/>
-    <geometry>
-      <mesh filename="package://serpens_urdf_description/meshes/link2_pair_1.stl" scale="0.001 0.001 0.001"/>
-    </geometry>
-  </collision>
-</link>
-
 <joint name="f1" type="fixed">
   <origin rpy="0 0 0" xyz="-0.024173 -0.005926 0.0325"/>
   <parent link="base_link"/>
@@ -654,10 +629,5 @@
   <child link="link3_2_1"/>
 </joint>
 
-<joint name="f19" type="fixed">
-  <origin rpy="0 0 0" xyz="0.0 0.033 0.0"/>
-  <parent link="link3_2_1"/>
-  <child link="link2_pair_1"/>
-</joint>
 
 </robot>
