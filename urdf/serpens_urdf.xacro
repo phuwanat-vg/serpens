@@ -466,7 +466,7 @@
   </collision>
 </link>
 
-<link name="link3.2_1">
+<link name="link3_2_1">
   <inertial>
     <origin rpy="0 0 0" xyz="1.4333935584587287e-06 0.016499900772567994 -0.00644320390643148"/>
     <mass value="0.007090930359163667"/>
@@ -475,14 +475,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.068223 0.009676 -0.1039"/>
     <geometry>
-      <mesh filename="package://serpens_urdf_description/meshes/link3.2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://serpens_urdf_description/meshes/link3_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.068223 0.009676 -0.1039"/>
     <geometry>
-      <mesh filename="package://serpens_urdf_description/meshes/link3.2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://serpens_urdf_description/meshes/link3_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -651,12 +651,12 @@
 <joint name="f18" type="fixed">
   <origin rpy="0 0 0" xyz="-0.0525 0.002 0.03"/>
   <parent link="link2_1"/>
-  <child link="link3.2_1"/>
+  <child link="link3_2_1"/>
 </joint>
 
 <joint name="f19" type="fixed">
   <origin rpy="0 0 0" xyz="0.0 0.033 0.0"/>
-  <parent link="link3.2_1"/>
+  <parent link="link3_2_1"/>
   <child link="link2_pair_1"/>
 </joint>
 

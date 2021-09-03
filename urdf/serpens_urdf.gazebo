@@ -161,7 +161,7 @@
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="link3.2_1">
+<gazebo reference="link3_2_1">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
