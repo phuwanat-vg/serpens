@@ -627,7 +627,7 @@
   <parent link="servo_tool_1"/>
   <child link="arm_servo_tool_1"/>
   <axis xyz="-0.0 0.0 -1.0"/>
-  <limit effort="100" lower="1.570796" upper="4.712389" velocity="100"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
 </joint>
 
 <joint name="f15" type="fixed">
