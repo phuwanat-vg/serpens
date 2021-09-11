@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="serpens_urdf">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="serpens_arm">
+        <joint name="joint0"/>
+        <joint name="joint1"/>
+        <joint name="joint2"/>
+        <joint name="joint3"/>
+        <joint name="joint4"/>
+        <joint name="joint5"/>
+    </group>
+    <group name="serpens_tool">
+        <link name="eef_1"/>
+        <link name="arm_servo_tool_1"/>
+        <link name="servo_tool_1"/>
+        <link name="tool_link_1"/>
+        <joint name="joint6"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="home" group="serpens_arm">
+        <joint name="joint0" value="0"/>
+        <joint name="joint1" value="0"/>
+        <joint name="joint2" value="0"/>
+        <joint name="joint3" value="0"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="0"/>
+    </group_state>
+    <group_state name="stand_by" group="serpens_arm">
+        <joint name="joint0" value="0"/>
+        <joint name="joint1" value="-0.3731"/>
+        <joint name="joint2" value="1.2844"/>
+        <joint name="joint3" value="0"/>
+        <joint name="joint4" value="-0.6335"/>
+        <joint name="joint5" value="0"/>
+    </group_state>
+    <group_state name="end_normal" group="serpens_tool">
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="end_open" group="serpens_tool">
+        <joint name="joint6" value="-0.8591"/>
+    </group_state>
+    <group_state name="end_close" group="serpens_tool">
+        <joint name="joint6" value="0.2517"/>
+    </group_state>
+    <group_state name="motion1" group="serpens_arm">
+        <joint name="joint0" value="0"/>
+        <joint name="joint1" value="-0.3731"/>
+        <joint name="joint2" value="0.8678"/>
+        <joint name="joint3" value="-0.9112"/>
+        <joint name="joint4" value="-0.6335"/>
+        <joint name="joint5" value="0.755"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="tool" parent_link="arm_servo_5_1" group="serpens_tool"/>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="vt1" type="fixed" parent_frame="world" child_link="base_link"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="arm_servo0_1" link2="arm_servo1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="arm_servo2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="arm_servo3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="arm_servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="arm_servo_5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="arm_servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="base_link" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="eef_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="link1_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo0_1" link2="link2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="link3_2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="servo0_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo0_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo0_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="arm_servo2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="arm_servo3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="arm_servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="arm_servo_5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="arm_servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="base_link" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="eef_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="link1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="link2_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo1_1" link2="link3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="link3_2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="servo0_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="servo1_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo1_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo1_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="arm_servo3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="arm_servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="arm_servo_5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="arm_servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="eef_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="link1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="link2_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo2_1" link2="link3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="link3_2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="servo0_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="servo2_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo2_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo2_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="arm_servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="arm_servo_5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="arm_servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="eef_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="link1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="link2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="link3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="link3_2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="link4_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo3_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="servo3_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo3_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo3_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="arm_servo_5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="arm_servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="eef_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="link1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="link2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="link3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="link3_2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="link5_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo4_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="servo4_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo4_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo4_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="arm_servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="eef_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="link1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="link2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="link3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="link3_2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="servo5_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo_5_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_5_1" link2="tool_link_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="link1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="link2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="link3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="link3_2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="servo_tool_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_servo_tool_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="link1_1" reason="Never"/>
+    <disable_collisions link1="base_link" link2="servo0_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="link1_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="link2_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="link3_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="link3_2_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="eef_1" link2="tool_link_1" reason="Adjacent"/>
+    <disable_collisions link1="link1_1" link2="link3_2_1" reason="Never"/>
+    <disable_collisions link1="link1_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="link1_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="link1_1" link2="servo0_1" reason="Never"/>
+    <disable_collisions link1="link1_1" link2="servo1_1" reason="Adjacent"/>
+    <disable_collisions link1="link1_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="link1_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="link1_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="link1_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="link3_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="link3_2_1" reason="Adjacent"/>
+    <disable_collisions link1="link2_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="servo0_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="link2_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="link3_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="link3_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="link3_1" link2="servo2_1" reason="Adjacent"/>
+    <disable_collisions link1="link3_1" link2="servo3_1" reason="Adjacent"/>
+    <disable_collisions link1="link3_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="link3_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="link3_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="link3_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="link3_2_1" link2="link4_1" reason="Never"/>
+    <disable_collisions link1="link3_2_1" link2="link5_1" reason="Never"/>
+    <disable_collisions link1="link3_2_1" link2="servo0_1" reason="Never"/>
+    <disable_collisions link1="link3_2_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="link3_2_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="link3_2_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="link3_2_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="link3_2_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="link3_2_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="link4_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="link4_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="link4_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="link4_1" link2="servo4_1" reason="Adjacent"/>
+    <disable_collisions link1="link4_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="link5_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="link5_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="link5_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="link5_1" link2="servo5_1" reason="Adjacent"/>
+    <disable_collisions link1="servo0_1" link2="servo1_1" reason="Never"/>
+    <disable_collisions link1="servo1_1" link2="servo2_1" reason="Never"/>
+    <disable_collisions link1="servo1_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="servo1_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="servo1_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="servo1_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="servo1_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="servo2_1" link2="servo3_1" reason="Never"/>
+    <disable_collisions link1="servo2_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="servo2_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="servo2_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="servo2_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="servo3_1" link2="servo4_1" reason="Never"/>
+    <disable_collisions link1="servo3_1" link2="servo5_1" reason="Never"/>
+    <disable_collisions link1="servo3_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="servo3_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="servo4_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="servo5_1" link2="servo_tool_1" reason="Never"/>
+    <disable_collisions link1="servo5_1" link2="tool_link_1" reason="Never"/>
+    <disable_collisions link1="servo_tool_1" link2="tool_link_1" reason="Adjacent"/>
+</robot>

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: serpens_urdf_description
+    relative_path: urdf/serpens_urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/serpens_urdf.srdf
+  CONFIG:
+    author_name: p
+    author_email: p@mail.com
+    generated_timestamp: 1631341370
