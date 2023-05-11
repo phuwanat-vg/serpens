@@ -6,7 +6,7 @@ import rospy
 import moveit_commander
 import moveit_msgs.msg
 import geometry_msgs.msg
-from sensor_msgs.msgs import JointState 
+from sensor_msgs.msg import JointState 
 moveit_commander.roscpp_initialize(sys.argv)
 rospy.init_node('move_group_python_interface_tutorial', anonymous=True)
 
